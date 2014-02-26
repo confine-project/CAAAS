@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #title Connected components
-#descr Provides a list of lists of connected nodes
+#descr Provides the separate connected components of the device and node graph
 
 import sys
 import networkx
