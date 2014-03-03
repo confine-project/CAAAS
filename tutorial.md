@@ -61,7 +61,7 @@ This would result in the following GEXF file structure:
 		<graph>
 	</gexf>
 
-If the logical node graph is needed for certain metrics, first the nodes with the same PID should be joined together.  Also the edges should be rewritten to aim at the joined node for the routing boards. Then the wired edges can be merged into a single node. Also here the edges should be renamed.
+If the logical node graph is needed for certain metrics, first the nodes with the same PID should be joined together.  Also the edges should be rewritten to aim at the joined node for the routing boards. Then, the nodes connected with wired edges can be merged into a single node. Also here the edges should be retargeted.
 
 #### Attributes
 To store the additional information of the devices, the attributes defined by GEXF are used. None of the attributes are obligatory.  The attributes are not limited by the list given in this section.
@@ -130,4 +130,5 @@ For our example, we output the node id and the closeness centrality value on a l
 	with open("closeness_centrality.txt", 'w') as f:
     	for i in sorted(cc, key=cc.get, reverse=True):
         	f.write("%s %f\n" % (i, cc[i]));
+
 
