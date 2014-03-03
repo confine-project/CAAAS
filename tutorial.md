@@ -44,14 +44,19 @@ This would result in the following GEXF file structure:
 			<edges>
 				<!-- wired edges in logical node A -->
 				<edge id="1" source="12" target="14"/>
-				<edge id="2" source="13" target="15"/>
+				<edge id="2" source="14" target="12"/>
+				<edge id="3" source="13" target="15"/>
+				<edge id="4" source="15" target="13"/>
 				
 				<!-- wired edges in logical node B -->
-				<edge id="3" source="22" target="24"/>
-				<edge id="4" source="23" target="25"/>
+				<edge id="5" source="22" target="24"/>
+				<edge id="5" source="24" target="22"/>
+				<edge id="6" source="23" target="25"/>
+				<edge id="6" source="25" target="23"/>
 				
 				<!-- wireless edge between logical node A  and B -->
 				<edge id="5" source="14" target="24"/>
+				<edge id="5" source="24" target="14"/>
 			</edges>
 		<graph>
 	</gexf>
