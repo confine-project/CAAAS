@@ -17,6 +17,7 @@ In this section we describe how the GEXF format describes the community network.
 * Each wireless connection between logical nodes, is a directed GEXF edge between the interface GEXF nodes.
 
 Consider the following example.
+
 ![Example of two logical nodes](images/example.png)
 
 This would result in the following GEXF file structure:
