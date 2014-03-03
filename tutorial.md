@@ -13,8 +13,10 @@ In this section we describe how the GEXF format describes the community network.
 * Each routing board is an GEXF node.
 * Each interface of the routing board is a GEXF node with the parent id equal to the id of its routing board.
 * Each antenna device is a GEXF node.
-* Each wired connection within the logical node, is a directed GEXF edge between the interface GEXF nodes.
-* Each wireless connection between logical nodes, is a directed GEXF edge between the interface GEXF nodes.
+* Each wired connection within the logical node, is a GEXF edge between the interface GEXF nodes.
+* Each wireless connection between logical nodes, is a GEXF edge between the interface GEXF nodes.
+
+The GEXF graph can be made directed. In this case, the direction indicates the access point -> station relationship for the wireless links or edges.
 
 Consider the following example.
 
@@ -23,7 +25,7 @@ Consider the following example.
 This would result in the following GEXF file structure:
 
 	<gexf>
-		<graph>
+		<graph defaultedgetype="directed">
 			<nodes>
 				<!-- logical node A -->
 				<node id="11" label="Router board A"/>
@@ -44,19 +46,14 @@ This would result in the following GEXF file structure:
 			<edges>
 				<!-- wired edges in logical node A -->
 				<edge id="1" source="12" target="14"/>
-				<edge id="2" source="14" target="12"/>
-				<edge id="3" source="13" target="15"/>
-				<edge id="4" source="15" target="13"/>
+				<edge id="2" source="13" target="15"/>
 				
 				<!-- wired edges in logical node B -->
-				<edge id="5" source="22" target="24"/>
-				<edge id="5" source="24" target="22"/>
-				<edge id="6" source="23" target="25"/>
-				<edge id="6" source="25" target="23"/>
+				<edge id="3" source="22" target="24"/>
+				<edge id="4" source="23" target="25"/>
 				
-				<!-- wireless edge between logical node A  and B -->
+				<!-- wireless edge between logical node A  and B with interface A1 the access point-->
 				<edge id="5" source="14" target="24"/>
-				<edge id="5" source="24" target="14"/>
 			</edges>
 		<graph>
 	</gexf>
@@ -77,7 +74,7 @@ Each GEXF node can have the following GEXF attributes:
 * interface_tx: Gives the number of transmitted bytes.
 * interface_error: Gives the number of transmission errors encountered.
 
-Not only the GEXF nodes have additional information, also the GEXF edges can hold extra information concerning the wired or wireless connections.  By defining the edges directed, the information of both 
+Not only the GEXF nodes have additional information, also the GEXF edges can hold extra information concerning the wired or wireless connections.
 Each GEXF edge can have the following GEXF attributes:
 
 * type: The type of edge, e.g. wired, wireless, VLAN, ... .
