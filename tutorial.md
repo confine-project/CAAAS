@@ -91,7 +91,13 @@ Each GEXF edge can have the following GEXF attributes:
 * speedmax: The maximum speed of the link.
 * discovered: Contains the type of algorithm the link was discovered with.
 
+## Analysis on CAAAS
+After creating an account on the CAAAS server, the user can upload a dataset and select algorithms to perform on the dataset as shown in the following figure.
+
+![upload interface of CAAAS](images/upload.png)
+
 ## Creating Python scripts for CAAAS
+Using push request on github, scripts can be requested for addition on the CAAAS server.
 
 ### Header
 Each script should start with a header containing the title and description of the algorithm or data analysis preformed.
