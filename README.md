@@ -94,7 +94,7 @@ After creating an account on the CAAAS server, the user can upload a dataset and
 ![upload interface of CAAAS](images/upload.png)
 
 ## Creating Python scripts for CAAAS
-Using push request on github, scripts can be requested for addition on the CAAAS server.
+Using pull requests on github, scripts can be requested for addition on the CAAAS server.
 
 ### Header
 Each script should start with a header containing the title and description of the algorithm or data analysis preformed.
